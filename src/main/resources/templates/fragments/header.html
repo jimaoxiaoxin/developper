@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4" data-th-fragment="header">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" type="text/css" href="js/semantic/semantic.min.css">
+    <link rel="stylesheet" type="text/css" href="css/common.css">
+    <script
+            src="js/jquery-3.1.1.min.js"
+            integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+            crossorigin="anonymous"></script>
+    <script src="js/semantic/semantic.min.js"></script>
+</head>
+<body>
+<div class="ui borderless main menu main-headder">
+    <div class="ui text container">
+        <div class="header item">
+            <img class="logo" src="img/dev.png">
+            &nbsp; &nbsp; All for Developpers
+        </div>
+        <a href="#" class="item">Blog</a>
+        <a href="#" class="item">Book</a>
+
+        <div class="right item">
+            <a class="ui button" th:href="@{/login}" style="margin-right:10px;">Login</a>
+            <a class="ui button" th:href="@{/register}">Register</a>
+        </div>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{fragments/header :: header}">
+</head>
+<body class="main-body">
+
+<div class="ui container main-container">
+    <div class="ui container middle aligned" style="width:400px;">
+        <form class="ui form" th:action="@{/login}" method="post">
+            <div class="field">
+                <div class="ui left icon input">
+                    <input type="text" id="username" name="username" maxlength="50" placeholder="Username">
+                    <i class="user icon"></i>
+                </div>
+            </div>
+
+            <div class="field">
+                <div class="ui left icon input">
+                    <input type="text" id="password" name="password" maxlength="30" placeholder="Password">
+                    <i class="lock icon"></i>
+                </div>
+            </div>
+
+            <div class="field">
+                <div class="ui checkbox remember-me-checkbox">
+                    <input type="checkbox" class="hidden" name="remember-me">
+                    <label>Remember me</label>
+                </div>
+            </div>
+
+            <div class="field">
+                <button type="submit" class="ui button" style="width:100%;">LOGIN</button>
+            </div>
+
+            <div class="ui error message" th:if="${loginError}">
+                <p class="blog-label-error" th:text="${errorMsg}"></p>
+            </div>
+        </form>
+    </div>
+
+</div>
+
+<script>
+    $(".remember-me-checkbox").checkbox();
+</script>
+
+<div th:replace="~{fragments/footer :: footer}">...</div>
+</body>
+</html>
