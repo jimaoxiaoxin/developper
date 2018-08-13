@@ -7,7 +7,7 @@
 
 <div class="ui container main-container">
     <div class="ui container middle aligned" style="width:400px;">
-        <form class="ui form" th:action="@{/login}" method="post">
+        <form class="ui form error" th:action="@{/login}" method="post">
             <div class="field">
                 <div class="ui left icon input">
                     <input type="text" id="username" name="username" maxlength="50" placeholder="Username">
@@ -22,6 +22,10 @@
                 </div>
             </div>
 
+            <div class="ui error message" th:if="${loginError}">
+                <p class="blog-label-error" th:text="${errorMsg}"></p>
+            </div>
+
             <div class="field">
                 <div class="ui checkbox remember-me-checkbox">
                     <input type="checkbox" class="hidden" name="remember-me">
@@ -33,12 +37,8 @@
                 <button type="submit" class="ui button" style="width:100%;">LOGIN</button>
             </div>
 
-            <div class="ui error message" th:if="${loginError}">
-                <p class="blog-label-error" th:text="${errorMsg}"></p>
-            </div>
         </form>
     </div>
-
 </div>
 
 <script>

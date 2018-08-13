@@ -39,7 +39,7 @@ public class UserController {
     @GetMapping("/login-error")
     public String loginError(Model model) {
         model.addAttribute("loginError", true);
-        model.addAttribute("errorMsg", "登陆失败，账号或者密码错误！");
+        model.addAttribute("errorMsg", "Login error, username or password not correct");
         return "login";
     }
 
@@ -49,6 +49,6 @@ public class UserController {
         authorityList.add(authorityServicce.getAuthorityById(ROLE_USER_AUTHORITY_ID));
         user.setAuthorities(authorityList);
         userService.saveUser(user);
-        return "redirect:/login";
+        return "redirect:/hello";
     }
 }
